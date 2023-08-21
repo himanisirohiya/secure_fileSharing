@@ -1,0 +1,91 @@
+extends layout
+
+block content
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container-fluid
+      a.navbar-brand(href='/app/') Network
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link.active( href='/app/') Home
+          if is_admin
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='#') Admin
+          li.nav-item
+            a.nav-link(href='/app/post') Create Post
+      form.d-flex(action='/users/logout',method='post')
+        button.btn.btn-outline-success(type='submit') Logout
+
+  div.container-fluid.row(class="marginVertical")
+    if users.length > 0
+      h2 Users
+      table.table.table-striped
+        tr
+          th Username 
+          th Name 
+          th Is Active 
+          th Approve
+          th Delete
+        for user in users
+          tr 
+            td #{user.USERNAME} 
+            td #{user.NAME}
+            td #{user.IS_ACTIVE ? 'True' : 'False'}
+            
+              if user.STATUS === 'NEW'
+                td
+                  form.inline.marginHorizontal(action='/users/approve/#{user.USERNAME}/approve',method='post')
+                    button.btn.btn-outline-success(type='submit') Approve
+                  form.inline.marginHorizontal(action='/users/approve/#{user.USERNAME}/decline',method='post')
+                    button.btn.btn-outline-danger(type='submit') Decline
+              else if user.STATUS === 'ACTIVE'
+                td Approved
+              else 
+                td Declined
+            td 
+              if user.STATUS === 'INACTIVE'
+                form.d-flex(action='/users/approve/#{user.USERNAME}/approve',method='post')
+                  button.btn.btn-outline-success(type='submit') Activate
+              else 
+                form.d-flex(action='/users/approve/#{user.USERNAME}/decline',method='post')
+                  button.btn.btn-outline-danger(type='submit') Deactivate
+  
+  div.container-fluid.row(class="marginVertical")
+    if posts.length > 0
+      h2 Posts
+      table.table.table-striped
+        tr
+          th ID 
+          th Text Content 
+          th File 
+          th By 
+          th Approve
+          th Delete
+        for post in posts
+          tr 
+            td #{post.POST_ID} 
+            td #{post.CONTENT}
+            td #{post.FILE}
+            td #{post.CREATED_BY}
+            
+              if post.STATUS === 'PENDING'
+                td
+                  form.inline.marginHorizontal(action='/files/approve/#{post.POST_ID}/approve',method='post')
+                    button.btn.btn-outline-success(type='submit') Approve
+                  form.inline.marginHorizontal(action='/files/approve/#{post.POST_ID}/decline',method='post')
+                    button.btn.btn-outline-danger(type='submit') Decline
+              else if post.STATUS === 'ACTIVE'
+                td Approved
+              else 
+                td Declined
+            td 
+              if post.STATUS === 'INACTIVE'
+                form.d-flex(action='/files/approve/#{post.POST_ID}/approve',method='post')
+                  button.btn.btn-outline-success(type='submit') Activate
+              else 
+                form.d-flex(action='/files/approve/#{post.POST_ID}/decline',method='post')
+                  button.btn.btn-outline-danger(type='submit') Deactivate
+
+

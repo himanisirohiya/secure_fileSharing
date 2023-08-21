@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+              .post-preview
+                  h2 Create Group
+                  div
+                    form(action='/files/upload', enctype="multipart/form-data", method='post')
+                      div(data-role='fieldcontain', class="marginVertical")
+                        fieldset(data-role='controlgroup')
+                          label(for='name', class="col-md-4") Name
+                          input(id='name', class="col-md-4" type='text',value='',name='name')
+                      div(data-role='fieldcontain', class="marginVertical")   
+                        input(type='submit', class="col-md-8", value='Create Group',data-transition='fade', data-theme='c')
+              hr
+
+

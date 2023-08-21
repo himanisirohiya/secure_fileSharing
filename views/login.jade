@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+              .post-preview
+                  h2 Sign Up
+                  div
+                    form(action='/users/signUp', method='post')
+                      div(data-role='fieldcontain', class="marginVertical")
+                        fieldset(data-role='controlgroup')
+                          label(for='name', class="col-md-4") Name
+                          input(id='name', class="col-md-4" type='text',value='',name='name')
+                      div(data-role='fieldcontain', class="marginVertical")
+                        fieldset(data-role='controlgroup')
+                          label(for='username', class="col-md-4") Username
+                          input(id='username', class="col-md-4" type='text',value='',name='username')
+                      div#passworddiv(data-role='fieldcontain', class="marginVertical")
+                        fieldset(data-role='controlgroup')
+                          label(for='password', class="col-md-4") Password
+                          input(id='password', class="col-md-4", type='password',value='',placeholder='',name='password')
+                      div(id='hiddendiv',data-role='fieldcontain', class="marginVertical")
+                        fieldset(data-role='controlgroup')
+                          label(for='hidden_password', class="col-md-4") Confirm Password
+                          input(id='hidden_password', class="col-md-4", type='text',value='',placeholder='',name='password2')
+                      div(data-role='fieldcontain', class="marginVertical")
+                        fieldset(data-type='vertical', data-role='controlgroup')                                           
+                        label(for='showpass', class="col-md-4") Show Password
+                        input(id='showpass', type='checkbox')
+                      div(data-role='fieldcontain', class="marginVertical")   
+                        input(type='submit', class="col-md-8", value='Sign Up',data-transition='fade', data-theme='c')
+              hr
+
+  .container
+    .row
+      .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+              .post-preview
+                  h2 Login
+                  div
+                    form(action='/users/login',method='post')
+                      div(data-role='fieldcontain', class="marginVertical")
+                        fieldset(data-role='controlgroup')
+                          label(for='username', class="col-md-4") Username
+                          input(id='username', class="col-md-4" type='text',value='',name='username')
+                      div#passworddiv(data-role='fieldcontain', class="marginVertical")
+                        fieldset(data-role='controlgroup')
+                          label(for='password', class="col-md-4") Password
+                          input(id='password', class="col-md-4", type='password',value='',placeholder='',name='password')
+                      div(data-role='fieldcontain', class="marginVertical")   
+                        input(type='submit', class="col-md-8", value='Login',data-transition='fade', data-theme='c')
+              hr
+

@@ -1,0 +1,111 @@
+extends layout
+
+block content
+  nav.navbar.navbar-default.navbar-custom.navbar-fixed-top
+    .container-fluid
+      // Brand and toggle get grouped for better mobile display
+      .navbar-header.page-scroll
+        button(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1").navbar-toggle
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href="index.html") Bootstrap with Jade 
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href="index.html") Home
+            a(href="about.html") About
+            a(href="post.html") Sample Post
+            a(href="contact.html") Contact
+  // Page Header
+    Set your background image for this header on the line below.
+  header.intro-header(style="background-image: url('home-bg.jpg')")
+      .container
+          .row
+              .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+                  .site-heading
+                      h1 Clean Blog
+                      hr.small
+                      span.subheading A Clean Blog Theme by Start Bootstrap
+  // Main Content
+  .container
+      .row
+          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+              .post-preview
+                  a(href="post.html")
+                      h2.post-title Man must explore, and this is exploration at its greatest
+                      h3.post-subtitle Problems look mighty small from 150 miles up
+                  p.post-meta Posted by 
+                    a(href="#") Start Bootstrap on September 24, 2014
+              hr
+              .post-preview
+                  a(href="post.html")
+                      h2.post-title
+                          I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+                  p.post-meta Posted by 
+                    a(href="#") Start Bootstrap on September 18, 2014
+              hr
+              .post-preview
+                  a(href="post.html")
+                      h2.post-title
+                          Science has not yet mastered prophecy
+                      h3.post-subtitle
+                          We predict too much for the next year and yet far too little for the next ten.
+                  p.post-meta Posted by 
+                    a(href="#") Start Bootstrap on August 24, 2014
+              hr
+              .post-preview
+                  a(href="post.html")
+                      h2.post-title Failure is not an option
+                      h3.post-subtitle
+                          Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+                  p.post-meta Posted by 
+                    a(href="#") Start Bootstrap on July 8, 2014
+              hr
+              // Pager 
+              ul.pager
+                  li.next
+                      a(href="#") Older Posts &rarr;
+  hr
+
+  // Footer 
+  footer
+      .container
+          .row
+              .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+                  ul.list-inline.text-center
+                      li
+                          a(href="#")
+                              span.fa-stack.fa-lg
+                                  i.fa.fa-circle.fa-stack-2x
+                                  i.fa.fa-twitter.fa-stack-1x.fa-inverse
+                          a(href="#")
+                              span.fa-stack.fa-lg
+                                  i.fa.fa-circle.fa-stack-2x
+                                  i.fa.fa-facebook.fa-stack-1x.fa-inverse
+                          a(href="#")
+                              span.fa-stack.fa-lg
+                                  i.fa.fa-circle.fa-stack-2x
+                                  i.fa.fa-github.fa-stack-1x.fa-inverse
+                  p.copyright.text-muted Copyright &copy; Your Website 2014
+ div
+  form(action='/signup',method='post')
+    div(data-role='fieldcontain')
+      fieldset(data-role='controlgroup')
+        label(for='email') email
+           input(id='email',type='text',value='',placeholder='@',name='email')
+    div#passworddiv(data-role='fieldcontain')
+      fieldset(data-role='controlgroup')
+        label(for='password') password
+           input(id='password',type='password',value='',placeholder='',name='password')
+    div(id='hiddendiv',data-role='fieldcontain')
+      fieldset(data-role='controlgroup')
+        label(for='hidden_password') password
+           input(id='hidden_password',type='text',value='',placeholder='',name='password2')
+    div(data-role='fieldcontain')
+      fieldset(data-type='vertical', data-role='controlgroup')                                           
+       label(for='showpass') show password
+       input(id='showpass',type='checkbox')
+    div(data-role='fieldcontain')   
+      input(type='submit',value='Sign Up',data-transition='fade', data-theme='c')

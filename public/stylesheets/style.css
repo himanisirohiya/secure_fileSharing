@@ -1,0 +1,39 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.marginVertical {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.marginHorizontal {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.inline {
+  display: inline;
+}
+
+.active {
+  opacity: 80;
+}
+
+.image {
+  width: 600px;
+  height: 'auto';
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.right {
+  float: right;
+}

@@ -1,0 +1,3 @@
+https://programmer.help/blogs/demo-of-a-simple-express-jade-mysql-bootstrap-nodejs.html
+https://www.bezkoder.com/node-js-express-file-upload/
+https://openclassrooms.com/en/courses/5614116-go-full-stack-with-node-js-express-and-mongodb/5656301-set-up-authentication-middleware
